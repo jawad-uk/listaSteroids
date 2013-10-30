@@ -1,0 +1,313 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+
+ /**{
+  border: 1px;
+  border-color: gray;
+  border-width: 1px;
+  border-style: dashed;
+  *for debugging*
+ }*/
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+/* {
+    debug borders 
+    border-color: red; 
+    border-style: dashed;
+    border-width: 1px;
+} */
+
+* {
+    font-family: 'droidkufi-light'
+    }
+
+#app-wrapper {
+    margin: 20px;
+}
+
+/*.topcoat-navigation-bar, #new-todo-view {
+    position: absolute;
+
+}*/
+
+
+#logo-main {
+    font-family: 'droidkufi-bold';
+    font-size: 3em;
+    background: -webkit-linear-gradient(left, rgba(200,72,232,1) 0%, rgba(200,72,232,1) 8%, rgba(143,129,246,1) 64%, rgba(107,166,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.topcoat-navigation-bar {
+  position: static;
+}
+
+
+#new-todo {
+position: relative;
+width: 100%%;
+right: 0px;
+margin: 5px 0px;
+}
+
+#new-todo-view #new-todo-submit {
+  position: relative;
+    left: 0px;
+    width: 100%;
+    padding: 0 1.25rem;
+    font-size:  20px;
+    line-height: 3rem;
+    letter-spacing: 1px;
+    border: none;
+    margin: 3px 0px;
+    background-color: gray;
+    color: #454545;
+
+    display: inline-block;}
+
+#new-todo-view #new-todo-submit.display {
+    position: relative;
+    left: 0px;
+    width: 100%;
+    padding: 0 1.25rem;
+    font-size:  20px;
+    line-height: 3rem;
+    letter-spacing: 1px;
+    border: none;
+    margin: 3px 0px;
+    display: inline-block;
+    background-color: #288edf;
+    color: white;
+}
+
+.todo-input {
+border: none;
+width:; 50%,
+}
+
+.todo-content {
+    overflow: hide;
+}
+
+#todos {
+  margin-top: 0px;
+  padding-left: 0;
+}
+
+#todos-view {
+  max-height: 70%;
+  overflow: scroll;
+}
+
+#todos-view li {
+/*  padding-top: 10px;
+  padding-top: 10px;*/
+  position: relative;
+/*  bottom: 5px;
+*/  font-size: 1.2em;
+/*  line-height: 0.9em;
+*/  border-bottom: 1px solid #ccc;
+  margin-right: 10px;
+}
+#todos-view li:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#todos-view .editing .display,
+#todos-view .editing .todo-content,
+#todos-view .edit {
+  display: none;
+}
+#todos-view .editing .edit {
+  display: block;
+}
+#todos-view .editing input {
+  width: 70%;
+  font-size: 1em;
+  font-family: inherit;
+  margin: 0;
+  padding-bottom: 10px;
+  line-height: 1.6em;
+/*  border: 1px solid #999;
+*/  outline: none;
+  /*padding: 10px 7px 0px 27px;
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0 1px 2px 0 inset;
+  box-shadow: rgba(0,0,0,0.2) 0 1px 2px 0 inset;*/
+}
+
+#todos-view .done .todo-content {
+  text-decoration: line-through;
+  color: #777;
+}
+#todos-view .todo-destroy {
+  position: absolute;
+  bottom: 18px;
+  display: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/icons-master/svg/delete.svg");
+  background-size: 25px 25px;
+}
+#todos-view li:hover .todo-destroy {
+  display: inline-block;
+  left: 80px;
+}
+
+#todos-view .todo-prioritize {
+  position: absolute;
+  bottom: 22px;
+  display: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-image: url("../topcoat/icons-master/svg/favorite.svg");
+  background-size: 20px 20px;
+}
+#todos-view li:hover .todo-prioritize {
+  display: inline-block;
+  left: 90px;
+}
+
+
+.check {
+    float: left;
+    margin: 10px;
+    margin-top: 4px;
+}
+
+.todo-count, .todo-clear {
+  display: block;
+
+}
+
+
+
+
+
+
+
+
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+/*    background-attachment:fixed;
+*/    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+   /* font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;*/
+}
+
+
+
+/* Portrait layout (default) */
+.app {
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+/*h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}*/
+/*
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+*/

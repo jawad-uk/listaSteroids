@@ -1,0 +1,1 @@
+{"name":"mySteroidsProject","version":"0.0.1","authors":[],"ignore":["**/.*","node_modules","www/components","www/spec","test","tests"],"dependencies":{"steroids-js":"2.7.x","jquery":"2.0.x","underscore":"1.5.1","backbone":"1.0.x", "backbone.localStorage":"1.1.7","backbone.handlebars":"","eco":""}}
